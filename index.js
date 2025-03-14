@@ -17,7 +17,7 @@ mongoose.connect(process.env.URL)
     .then(() => {
         console.log("Connected to mongodb");
     })
-    .catch(err => console.log("Failed to connect to database"));
+    .catch(err => console.log(`Failed to connect to database ${err}`));
 
 
 const app=express();
