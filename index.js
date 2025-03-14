@@ -114,7 +114,8 @@ app.post('/get-url', async (req, res) => {
     try {
         const apiKey = process.env.API_KEY; 
 
-        const lighthouseApiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&key=${apiKey}&category=performance&category=accessibility&category=seo`;
+        const lighthouseApiUrl = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${encodeURIComponent(url)}&key=${process.env.API_KEY}&category=performance&category=accessibility&category=seo`;
+
         console.log('Lighthouse API URL:', lighthouseApiUrl);
 
         const response = await fetch(lighthouseApiUrl);
